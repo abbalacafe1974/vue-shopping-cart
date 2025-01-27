@@ -1,0 +1,11 @@
+.custom-favo {
+  position: relative;
+  .remove-favo {
+    padding-top: 5px;
+    padding-right: 10px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+  }
+}

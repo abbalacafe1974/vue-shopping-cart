@@ -20,5 +20,6 @@ module.exports = {
     "vue/multi-word-component-names": "off", // eslint-disable vue/multi-word-component-names
     'no-trailing-spaces': 'off', // 禁用 no-trailing-spaces
     'object-curly-newline': 'off', // 允許單行書寫
+    "max-len": "off"  // 禁用 max-len 規則
   },
 };

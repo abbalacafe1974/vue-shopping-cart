@@ -1,25 +1,99 @@
 import { createApp } from 'vue';
+// bootstrap js
+import 'bootstrap';
+// axios
 import axios from 'axios';
-import Loading from 'vue3-loading-overlay';
-import 'vue3-loading-overlay/dist/vue3-loading-overlay.css';
-import { currency, date } from './methods/filters';
-import $httpMessageState from './methods/pushMessageState';
+import VueAxios from 'vue-axios';
+// vue-loading-overlay
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/css/index.css';
+// AOS
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
+// fortawesome
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faCartShopping,
+  faHeart,
+  faPhone,
+  faHouse,
+  faEnvelope,
+  faUserGear,
+  faCartPlus,
+  faMagnifyingGlass,
+  faTicket,
+  faBus,
+  faXmark,
+  faArrowLeft,
+  faArrowRight,
+  faPlus,
+  faMinus,
+  faChevronUp,
+  faChevronDown,
+} from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+// vee-validate
+import {
+  Form, Field, ErrorMessage, defineRule, configure,
+} from 'vee-validate';
+import { required, email, min } from '@vee-validate/rules';
+import { localize, setLocale } from '@vee-validate/i18n';
+import zhTW from '@vee-validate/i18n/dist/locale/zh_TW.json';
+// all.scss
+import './assets/stylesheets/all.scss';
+import './assets/stylesheets/custom.scss';
+
 import App from './App.vue';
 import router from './router';
-// Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap'; // 引入 Bootstrap 的 JS（如需要）
-import 'bootstrap-icons/font/bootstrap-icons.css';
-// Axios
-const app = createApp(App); // 使用 createApp 創建 Vue 應用
-// 將 Axios 註冊為全局屬性
-app.config.globalProperties.$http = axios;
-// 此函式的用途是整合 Ajax 的錯誤事件，統一整理發送給予 Toast 處理
-app.config.globalProperties.$httpMessageState = $httpMessageState;
-app.config.globalProperties.$filters = {
-  date,
-  currency,
-};
+
+library.add(
+  faCartShopping,
+  faHeart,
+  faPhone,
+  faHouse,
+  faEnvelope,
+  faFacebook,
+  faInstagram,
+  faGithub,
+  faUserGear,
+  faCartPlus,
+  faMagnifyingGlass,
+  faTicket,
+  faBus,
+  far,
+  faXmark,
+  faArrowLeft,
+  faArrowRight,
+  faPlus,
+  faMinus,
+  faChevronUp,
+  faChevronDown,
+);
+
+defineRule('required', required);
+defineRule('email', email);
+defineRule('min', min);
+
+configure({
+  generateMessage: localize({
+    zhTW,
+  }),
+  validateOnInput: true,
+});
+
+setLocale('zhTW');
+// AOS init
+// AOS.init();
+
+const app = createApp(App);
+app.component('font-awesome-icon', FontAwesomeIcon);
+app.use(VueAxios, axios);
 app.use(router);
+// app.use(AOS);
 app.component('Loading', Loading);
+app.component('Form', Form);
+app.component('Field', Field);
+app.component('ErrorMessage', ErrorMessage);
 app.mount('#app');

@@ -1,0 +1,25 @@
+.custom-nav {
+  transition: 0.5s;
+  @include max-width-991 {
+    background-color: $primary;
+  }
+
+  a {
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.custom-badge {
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Playball', cursive;
+}

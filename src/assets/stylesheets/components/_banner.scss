@@ -1,0 +1,43 @@
+.custom-banner {
+  background-image: url('https://storage.googleapis.com/vue-course-api.appspot.com/skps0102/1647414748382.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=We8LVeNIuihPH7tFrHwuaEAtRZuxi9I4BaDu1BtDkPK4S6TtS3vEJAGV%2Bgq4l23v579o91NuiaM0YB09wxkq20CnlPAQ7UULyL2Xmq1RTRXENSNNQSloTo1dYKfFy3J9MWOYHeiKhAiB0F%2Ffrui3nw%2F2Uc34FOHN62ed%2Fj7khzNjL97cphB6cT2FZUYaOU%2FnHTLn90dM8Jux5gJPJTS%2BG5K0I507%2BUv23J0D6hOn8q%2BJGeQ5ccwPL7xReYXwostgYPsmuuZmUMgTHb6AmqBwKE3gim9bYumKUxUYQk9Vy2ipzmqJkm2%2BylEyqSyQyNmqPyWeJnhM8sm9jXXB37k15g%3D%3D');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  // background-attachment: fixed; //背景圖會固定住
+  height: 100vh;
+
+  .mask {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: opacity(60%);
+    // background-color: $opacity-4;
+  }
+}
+
+.vh-30 {
+  height: 30vh;
+}
+
+.products-banner {
+  background-image: url('https://storage.googleapis.com/vue-course-api.appspot.com/skps0102/1647246239580.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=NamH2O4MUwp3M71IGfGhP7AuagPvhFJRqTjPNwc63M%2B5XgBzldVW5rT%2B329Z%2FrSqTo0xfGG98XlVDNKlcDh0subPLsReBqBxLcHye5tPv1wjkPqhrhwSEIgkl2o7g6c%2B41iBLY%2B8RVuZhqDqnAwt2w6upWMA%2BVPBvtVhT7aSW2DsQPKDEzZ3LZaPTqoLeK8AcOVUapwcFybx93q9ayiUqhkNaL1J13AryUTJGrimrHPs%2B9Q9osgf5%2Bnw%2BI6%2BdAxGF8YAxVFz4GrG0%2BotVzGslrcmKAQ61i6qfFV8WZ5l0kVrRexDD97BroLm9ykVqH%2FOdMGQ2%2FDQhkMa%2FACGcZcyuA%3D%3D');
+}
+
+.product-banner {
+  background-image: url('https://storage.googleapis.com/vue-course-api.appspot.com/skps0102/1647246239580.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=NamH2O4MUwp3M71IGfGhP7AuagPvhFJRqTjPNwc63M%2B5XgBzldVW5rT%2B329Z%2FrSqTo0xfGG98XlVDNKlcDh0subPLsReBqBxLcHye5tPv1wjkPqhrhwSEIgkl2o7g6c%2B41iBLY%2B8RVuZhqDqnAwt2w6upWMA%2BVPBvtVhT7aSW2DsQPKDEzZ3LZaPTqoLeK8AcOVUapwcFybx93q9ayiUqhkNaL1J13AryUTJGrimrHPs%2B9Q9osgf5%2Bnw%2BI6%2BdAxGF8YAxVFz4GrG0%2BotVzGslrcmKAQ61i6qfFV8WZ5l0kVrRexDD97BroLm9ykVqH%2FOdMGQ2%2FDQhkMa%2FACGcZcyuA%3D%3D');
+}
+
+.about-banner {
+  background-image: url('https://storage.googleapis.com/vue-course-api.appspot.com/skps0102/1651678688696.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=d3WnbWHeYDVT0PZMa1IEBEGe9eHpxi7uLfgDzhQN%2FOLUcXR%2FnjS6dKgm%2BehRFSsDSzWaIq9MwNRRJCZ3g9pvoZyIo9lwKOSSNlD9kTrLrQNEL%2BkJ38oQWvAfSqLJEe6Kdyyv2%2BwBd13s2z3OyrjXleC4WWcUJqyQdT1KaPqcHotg0KWUIp6Qs2E%2FxIJ56Ix5RGHVWMKbWZ7F%2Fx2DPHQWP8mXPQBm9Yo2cWqaGnb%2FNk6c%2BNHbccvtlpZlxtZGqlvysN%2F5arjzk2dWzt%2BY3%2FH53Pzr%2F23uqpA8hgqR4NpU%2BL9mXIrLERuPoUV7ZVg9OQ4FOx91%2BIWl%2Bn3B6cYVaJDwiQ%3D%3D');
+}
+
+.favorite-banner {
+  background-image: url('https://storage.googleapis.com/vue-course-api.appspot.com/skps0102/1648022704881.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=TcUsZFNSLAmCvaKHZSJNfhDnY4dPF7tAPnstjZj4o3cyv0DRWw%2FrZZ9cpOF9WO1WRepKwau5NC2E6dS%2FWIdcxpPjsUDBaxOfcvUySVuLup5JEkVGl%2BpkJwryoKbaQobj%2BuIfPzyi1r8%2F%2FicjJ5x5jZmtJlxLNlcoXsZznm7NSzyk3UE4Ma7TDHDUz17mlA%2BGP6Djol4YW3SzPdpAn7Oj%2BCkPE%2FbKTNNch0BgqyPZx75%2B2Jo1IyjMQZMDm0CSmoT%2BrsyCbF5GlhJg9dkSD1Z0IKgPq%2BL2fF5aVqgKwJpVIFSi%2BFyS%2BYSV39Iw4tFws%2B%2BGYNeZA32uNTXaDTYc1WbfrQ%3D%3D');
+}
+
+.cart-banner {
+  background-image: url('https://storage.googleapis.com/vue-course-api.appspot.com/skps0102/1648022871731.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=MyssbkjJlnn2QJ3AsbJzJ2aot%2FrOcZWHzsLFcIj7Yn6r1QO021q0MmrPUJofNAA0d8JTs9pD61GXAsBeBx2d41dd7nkCqL8xL%2BxvOB5XBuwWmhZKx2RYGmbQqiIauxqyBELSkCgnlz4BpvLOnw1D1V7xsEx4qj%2FCT5UAXMLv7NpJ%2FZ6MHJgj5E5R3ztrRx4w842iIcwJZCocvHEpaa8q3t3lBME0jiF%2BRHYKHiIFyuNTsIKsxxloAp2pExAzgDcGbqJdFsko07eycGULQ2C3IsoSryWP7AQr6yOjWUNEP706SMf663uH1K%2B0zpMjyc6O6j3cxSqreYozUCQ1cXEVzw%3D%3D');
+}
+
+.checkOut-banner {
+  background-image: url('https://storage.googleapis.com/vue-course-api.appspot.com/skps0102/1651679110403.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=BbbyOel1WwuoHEJyiUiyZUcO%2BuHwDYZo7Scj5NvmQRNDPMOdDwSakuYqlNx8iAElsNWsANFVDoGIPnRweHnoOuWiq7T7Zuq9Z%2F6doHrE7%2BjUb%2FhbqwkZOnc860FWbZD1QDO7WbEYL9ljHo%2FvyudtfwdAjKYvhUBR%2F3fPdgInO9cDLLXzHwOzmWZ%2FD4cUfjNghVSlbAi6KK3C1pc7rhLDMoWffn8fCd7n%2FtbjZ2O3RxmohqiSUpps5ZMIVn0kLc6XdAv%2F9hpI0qdXUJVFv5%2BrRwv9jR8FqVoL4KSXm9e4UbpzUS3Eb%2BwCsLk675MaMMgZCJDcr0sEPx9SZWHRoiCBgA%3D%3D');
+}

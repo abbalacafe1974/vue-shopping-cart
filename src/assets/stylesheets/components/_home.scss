@@ -1,0 +1,45 @@
+.custom-state{
+  .underline {
+    text-decoration: none;
+  }
+
+  .underline:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+  }
+
+
+
+  .background {
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: center center;
+    height: 300px;
+    transition: all .3s ease-in-out;
+
+    .custom-bg {
+      // background-color: $opacity-3;
+    }
+
+    &:hover{
+      background-size: 170%;
+
+      .underline:after {
+        width: 100%;
+        background: $white;
+      }
+    }
+  }
+}
+
+.custom-arts {
+  // background-image: linear-gradient($opacity-1,$opacity-1), url('https://storage.googleapis.com/vue-course-api.appspot.com/skps0102/1651677884796.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=k1tdsnk6WIZ44SWxqO8dGdHFeNCWaOdrqJEYBnS19vVKe%2FmNvxsdLQ%2FU9bIwEiIX3LGQJHUkWy%2BuDnoG72UtUwRG%2FAivadq793nl%2BgowQLFOiaxK1nZl0YKAnQIse%2B2E9vAtTgcTLJ84xflFLOFigSIJAkZnEu4u0t5uzMu9MdicLUGvLtuL0wUae98v5dEbt21spulLGhUBy0WMQb5mfwAz1AnCDFgKh7AJRTTMO9c%2FP8FQ7oDXOj2Bs6Ua%2BGqMGnbSZFMdOzbmH3imnHEG3qauO0JGqgvsSWDO4alewytsX9AiInA4bJjk1COnCcBE7WXciv1Bo%2BNiywAwdF4ZWQ%3D%3D');
+  background-attachment: fixed; //背景圖會固定住
+  background-size: cover;
+  background-position: center;
+}
