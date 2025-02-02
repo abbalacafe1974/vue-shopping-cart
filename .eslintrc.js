@@ -20,6 +20,13 @@ module.exports = {
     "vue/multi-word-component-names": "off", // eslint-disable vue/multi-word-component-names
     'no-trailing-spaces': 'off', // 禁用 no-trailing-spaces
     'object-curly-newline': 'off', // 允許單行書寫
-    "max-len": "off"  // 禁用 max-len 規則
+    "max-len": "off",  // 禁用 max-len 規則
+    'no-unused-vars': 'off', // 關閉未使用變數提醒
+    'import/no-unresolved': 'off', // 關閉無法解析路徑的提醒
+    'quote-props': 'off',
+    'no-unused-vars': 'off', // 關閉未使用變量的警告
+    'import/no-unresolved': 'off', // 關閉無法解析模組的錯誤
+    "no-multiple-empty-lines": "off", // 關閉多行提醒
+    "vue/no-unused-components": "off", // 關閉未使用元件
   },
 };

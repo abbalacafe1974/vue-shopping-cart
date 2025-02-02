@@ -8,8 +8,8 @@ import VueAxios from 'vue-axios';
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/css/index.css';
 // AOS
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 // fortawesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -85,13 +85,13 @@ configure({
 
 setLocale('zhTW');
 // AOS init
-// AOS.init();
+AOS.init();
 
 const app = createApp(App);
 app.component('font-awesome-icon', FontAwesomeIcon);
 app.use(VueAxios, axios);
 app.use(router);
-// app.use(AOS);
+app.use(AOS);
 app.component('Loading', Loading);
 app.component('Form', Form);
 app.component('Field', Field);

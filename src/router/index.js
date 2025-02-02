@@ -1,63 +1,121 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+// import HomeView from '../views/client/HomeView.vue';
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView,
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
-  },
-  {
-    path: '/signin',
-    name: 'signin',
-    component: () => import(/* webpackChunkName: "signin" */ '../views/SigninView.vue'),
-  },
-  {
-    path: '/dashboard',
-    name: 'dashboard',
-    component: () => import(/* webpackChunkName: "dashboard" */ '../views/DashboardView.vue'),
+    redirect: 'home',
+    component: () => import('../views/client/FrontView.vue'),
     children: [
+      {
+        path: 'home',
+        component: () => import('../views/client/HomeView.vue'),
+      },
       {
         path: 'products',
-        component: () => import(/* webpackChunkName: "products" */ '../views/ProductsView.vue')
+        name: 'Products',
+        component: () => import('../views/client/ProductsView.vue'),
+        meta: {
+          breadcrumb: [{
+            name: '首頁',
+            link: '/',
+          },
+          {
+            name: '景點列表',
+          }],
+        },
       },
       {
-        path: 'orders',
-        component: () => import('../views/OrdersView.vue'),
+        path: 'product/:id',
+        component: () => import('../views/client/ProductView.vue'),
+        meta: {
+          breadcrumb: [{
+            name: '首頁',
+            link: '/',
+          },
+          {
+            name: '景點列表',
+            link: '/products',
+          }],
+        },
       },
       {
-        path: 'coupons',
-        component: () => import('../views/CouponsView.vue'),
+        path: 'about',
+        component: () => import('../views/client/AboutView.vue'),
+        meta: {
+          breadcrumb: [{
+            name: '首頁',
+            link: '/',
+          },
+          {
+            name: '關於我們',
+          }],
+        },
+      },
+      {
+        path: 'favorite',
+        component: () => import('../views/client/FavoriteView.vue'),
+        meta: {
+          breadcrumb: [{
+            name: '首頁',
+            link: '/',
+          },
+          {
+            name: '我的收藏',
+          }],
+        },
+      },
+      {
+        path: 'cart',
+        component: () => import('../views/client/CartView.vue'),
+        meta: {
+          breadcrumb: [{
+            name: '首頁',
+            link: '/',
+          },
+          {
+            name: '購物車',
+          }],
+        },
+      },
+      {
+        path: 'checkout',
+        redirect: '/checkout/order',
+        component: () => import('../views/client/CheckOutView.vue'),
+        children: [
+          {
+            path: 'order',
+            component: () => import('../views/client/OrderView.vue'),
+          },
+          {
+            path: 'pay/:id',
+            component: () => import('../views/client/PayView.vue'),
+          },
+          {
+            path: 'payed/:id',
+            component: () => import('../views/client/PayedView.vue'),
+          },
+        ],
       },
     ],
   },
   {
-    path: '/user',
-    component: () => import('../views/UserboardView.vue'),
-    children: [
-      {
-        path: 'cart',
-        component: () => import('../views/UserCartView.vue'),
-      },
-      {
-        path: 'product/:productId',
-        component: () => import('../views/UserProductView.vue'),
-      },
-    ],
+    path: '/login',
+    component: () => import('../views/client/LoginView.vue'),
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    component: () => import('../views/NotFoundView.vue'),
   },
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  linkActiveClass: 'active',
+  scrollBehavior() {
+    return { top: 0, behavior: 'smooth' };
+  },
 });
 
 export default router;

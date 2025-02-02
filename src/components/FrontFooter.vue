@@ -1,5 +1,5 @@
 <template>
-  Hello World
+  Front Footer
 </template>
 
 <script>

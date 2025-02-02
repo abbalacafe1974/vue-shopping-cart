@@ -1,5 +1,5 @@
 <template>
-  Hello World
+  Home
 </template>
 
 <script>
