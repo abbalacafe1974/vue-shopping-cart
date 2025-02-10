@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-card card w-100 h-100" style="width: 18rem">
+  <div class="custom-card card w-100 h-100 animate__animated animate__fadeInUp animate__delay-1s" style="width: 18rem">
     <div class="custom-img">
       <img
         :src="product.imageUrl"
@@ -10,22 +10,6 @@
         <font-awesome-icon :icon="['fas', 'magnifying-glass']" class="px-1" />
           查看更多
       </span>
-      <!-- 實心愛心 -->
-      <font-awesome-icon
-        :icon="[isFavorite ? 'fa' : 'far', 'heart']"
-        class="collect fs-4 text-danger"
-        data-bs-toggle="tooltip"
-        data-bs-placement="buttom"
-        title="取消收藏"
-        
-      />
-      <!-- 空心愛心 -->
-      <font-awesome-icon
-        :icon="[isFavorite ? 'fa' : 'far', 'heart']"
-        class="fs-4 text-danger transition-heart"
-        data-bs-toggle="tooltip"
-        :title="isFavorite ? '取消收藏' : '加入收藏'"
-      />
     </div>
 
     <div class="card-body p-3">
@@ -51,11 +35,15 @@
 export default {
   data() {
     return {
+      quantity: 1,
       isFavorite: false, // 初始為未收藏
     };
   },
   props: ['product'],
   methods: {
+    emitAddToCart() {
+      this.$emit('add-to-cart', this.product.id);
+    },
     toggleFavorite() {
       this.isFavorite = !this.isFavorite; // 切換狀態
     },

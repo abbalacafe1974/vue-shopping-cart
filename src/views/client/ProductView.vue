@@ -1,4 +1,5 @@
 <template>
+  <FrontNavbar />
   <Loading :active="isLoading" />
 
   <section class="py-5">
@@ -67,10 +68,11 @@
 </template>
 
 <script>
+import FrontNavbar from '@/components/FrontNavbar.vue';
 
 export default {
   components: {
-
+    FrontNavbar,
   },
   data() {
     return {

@@ -1,7 +1,8 @@
 <template>
+  <FrontNavbar />
 
   <Loading :active="isLoading" />
-  <section class="mb-5">
+  <section class="mb-5" style="padding-top: 80px;">
   <div class="container">
     <template v-if="carts.length">
       <!-- 清空購物車區域 -->
@@ -44,7 +45,7 @@
                     `"
                   ></div>
                 </td>
-                <td class="fw-bold text-truncate" style="max-width: 200px;">{{ item.product.title }}</td>
+                <td class="fw-bold text-truncate" style="max-width: 140px;">{{ item.product.title }}</td>
                 <td>
                   <div class="quantity-control d-flex justify-content-center align-items-center">
                     <button
@@ -106,9 +107,9 @@
     <template v-else>
       <div class="text-center py-5">
         <div class="bg-light py-4 px-3 px-sm-5 rounded-3 shadow-sm">
-          <h2 class="fw-bold mb-4">尚未有景點加入購物車</h2>
+          <h2 class="fw-bold mb-4" style="padding-top: 30px;">尚未有商品加入購物車</h2>
           <router-link class="btn btn-primary btn-lg fw-bolder" to="/products">
-            把喜歡的景點加入購物車吧 !
+            把喜歡的商品加入購物車吧 !
           </router-link>
         </div>
       </div>
@@ -119,12 +120,11 @@
 </template>
 
 <script>
-import FrontBanner from '@/components/FrontBanner.vue';
-import BreadCrumb from '@/components/BreadCrumb.vue';
-import showToastMsg from '@/func/showToastMsg';
+import FrontNavbar from '@/components/FrontNavbar.vue';
 
 export default {
   components: {
+    FrontNavbar,
   },
   data() {
     return {
@@ -147,7 +147,6 @@ export default {
         })
         .catch((err) => {
           const { message, success } = err.response.data;
-          showToastMsg(success, message);
         });
     },
     updateCart(product) {

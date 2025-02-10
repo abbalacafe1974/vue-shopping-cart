@@ -40,32 +40,6 @@ const routes = [
         },
       },
       {
-        path: 'about',
-        component: () => import('../views/client/AboutView.vue'),
-        meta: {
-          breadcrumb: [{
-            name: '首頁',
-            link: '/',
-          },
-          {
-            name: '關於我們',
-          }],
-        },
-      },
-      {
-        path: 'favorite',
-        component: () => import('../views/client/FavoriteView.vue'),
-        meta: {
-          breadcrumb: [{
-            name: '首頁',
-            link: '/',
-          },
-          {
-            name: '我的收藏',
-          }],
-        },
-      },
-      {
         path: 'cart',
         component: () => import('../views/client/CartView.vue'),
         meta: {
@@ -98,14 +72,6 @@ const routes = [
         ],
       },
     ],
-  },
-  {
-    path: '/login',
-    component: () => import('../views/client/LoginView.vue'),
-  },
-  {
-    path: '/:pathMatch(.*)*',
-    component: () => import('../views/NotFoundView.vue'),
   },
 ];
 

@@ -1,6 +1,6 @@
 <template>
-  <FrontBanner />
-  <section class="my-4 my-sm-5">
+  <FrontNavbar />
+  <section class="my-4 my-sm-5" style="padding-top: 80px;">
     <div class="container">
       <div class="row">
         <div class="col-sm-4 text-center p-2">
@@ -56,11 +56,11 @@
 </template>
 
 <script>
-import FrontBanner from '@/components/FrontBanner.vue';
+import FrontNavbar from '@/components/FrontNavbar.vue';
 
 export default {
   components: {
-    FrontBanner,
+    FrontNavbar,
   },
   data() {
     return {

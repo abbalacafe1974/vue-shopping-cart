@@ -10,6 +10,8 @@ import 'vue-loading-overlay/dist/css/index.css';
 // AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+// 引入 animate.css
+import 'animate.css'; // 引入 animate.css
 // fortawesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {

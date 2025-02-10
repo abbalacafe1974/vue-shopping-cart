@@ -186,7 +186,6 @@
 </template>
 
 <script>
-import showToastMsg from '@/func/showToastMsg';
 import Vue3Marquee from 'vue3-marquee';
 // import 'vue3-marquee/dist/style.css';
 
