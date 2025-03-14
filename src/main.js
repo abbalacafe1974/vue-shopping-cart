@@ -15,17 +15,9 @@ import 'animate.css'; // 引入 animate.css
 // fortawesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
-  faCartShopping,
   faHeart,
-  faPhone,
-  faHouse,
-  faEnvelope,
-  faUserGear,
   faCartPlus,
   faMagnifyingGlass,
-  faTicket,
-  faBus,
-  faXmark,
   faArrowLeft,
   faArrowRight,
   faPlus,
@@ -51,21 +43,12 @@ import App from './App.vue';
 import router from './router';
 
 library.add(
-  faCartShopping,
   faHeart,
-  faPhone,
-  faHouse,
-  faEnvelope,
   faFacebook,
   faInstagram,
   faGithub,
-  faUserGear,
-  faCartPlus,
   faMagnifyingGlass,
-  faTicket,
-  faBus,
   far,
-  faXmark,
   faArrowLeft,
   faArrowRight,
   faPlus,

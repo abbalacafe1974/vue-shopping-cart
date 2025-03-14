@@ -21,27 +21,6 @@
         </h1>
       </router-link>
 
-      <div class="navbar-nav d-flex flex-row order-lg-2">
-        <router-link to="/cart" class="nav-link p-0">
-          <div class="p-3">
-            <div class="position-relative">
-              <span class="
-                custom-badge
-                position-absolute
-                top-0
-                start-100
-                translate-middle
-                badge
-                rounded-pill
-                bg-danger
-              " >
-              </span>
-              <font-awesome-icon :icon="['fas', 'cart-shopping']" />
-            </div>
-          </div>
-        </router-link>
-      </div>
-
       <button
         class="navbar-toggler order-lg-3"
         type="button"

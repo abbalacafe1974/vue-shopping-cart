@@ -3,9 +3,9 @@
   <Loading :active="isLoading" />
 
   <section class="py-5">
-  <div class="container-lg">
+  <div class="container-lg" style="padding-top: 50px;">
     <div class="row justify-content-between align-items-center">
-      <!-- 圖片區域（回復原本設計） -->
+      <!-- 圖片區域 -->
       <div class="col-md-6 col-lg-5 mb-4 mb-md-0">
         <div class="row row-cols-1 d-flex justify-content-center">
           <div class="col text-center">
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <!-- 右半部區域（保留我之前給的設計） -->
+      <!-- 右半部區域 -->
       <div class="col-md-6 col-lg-6 offset-lg-1">
         <div class="d-flex flex-column justify-content-between h-100">
           <!-- 類別標籤 -->
@@ -69,6 +69,7 @@
 
 <script>
 import FrontNavbar from '@/components/FrontNavbar.vue';
+import productsData from '@/assets/data';
 
 export default {
   components: {
@@ -77,6 +78,7 @@ export default {
   data() {
     return {
       isLoading: false,
+      products: productsData,
       product: {},
       mainImg: '',
       isFavorite: false, // 初始為未收藏
@@ -100,36 +102,41 @@ export default {
       this.isLoading = true;
       const { id } = this.$route.params;
 
-      this.$http.get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/product/${id}`)
-        .then((res) => {
-          this.isLoading = false;
-          const { product } = res.data;
-          this.product = product;
-          this.mainImg = this.product.imageUrl;
-        })
-        .catch((err) => {
-          const { message, success } = err.response.data;
-          console.log(message, success);
-        });
+      const product = this.products.find((item) => item.id === id); // 在靜態資料中查找對應的商品
+      if (product) {
+        this.product = product;
+        this.mainImg = product.imageUrl;
+        console.log('Product details:', product); // 確認 product 是否正確
+        console.log(product.imageUrl);
+        this.isLoading = false;
+      } else {
+        console.log('找不到該商品');
+      }
     },
     addToCart() {
       this.isLoading = true;
-      const para = {
-        data: {
-          product_id: this.product.id,
-          qty: this.quantity,
-        },
-      };
-      this.$http.post(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`, para)
-        .then((res) => {
-          this.isLoading = false;
-          const { message, success } = res.data;
-          const { title } = res.data.data.product;
-          this.quantity = 1;
-        })
-        .catch((err) => {
-          const { message, success } = err.response.data;
-        });
+      console.log('Product in addToCart:', this.product);
+      console.log('Product Image URL:', this.product.imageUrl);
+      // 此部分不變，這裡你可以自行模擬加入購物車的操作
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItem = cart.find((item) => item.product_id === this.product.id);
+
+      if (cartItem) {
+        cartItem.qty += this.quantity;
+      } else {
+        const cartItemToAdd = {
+        product_id: this.product.id,
+        qty: this.quantity,
+        image_url: this.product.imageUrl, // 確保這裡正確加入 imageUrl
+        };
+        console.log('Cart item to add:', cartItemToAdd); // 打印即將加入購物車的項目
+        cart.push(cartItemToAdd);
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      
+      this.isLoading = false;
+      console.log('🛒 商品已加入購物車:', cart);
+      this.quantity = 1; // 重置數量
     },
     toggleFavorite() {
       this.isFavorite = !this.isFavorite; // 切換狀態

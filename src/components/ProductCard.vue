@@ -42,7 +42,7 @@ export default {
   props: ['product'],
   methods: {
     emitAddToCart() {
-      this.$emit('add-to-cart', this.product.id);
+      this.$emit('add-to-cart', this.product.id, this.product.imageUrl);
     },
     toggleFavorite() {
       this.isFavorite = !this.isFavorite; // 切換狀態
